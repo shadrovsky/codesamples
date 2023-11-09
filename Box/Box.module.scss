@@ -1,0 +1,193 @@
+@use 'src/shared/styles/unity' as *;
+
+// ===================================
+// Paddings and margins
+// ===================================
+
+$numbers: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+$factor: 8;
+
+@each $n in $numbers {
+  ._m-#{$n} {
+    margin: #{$n * $factor}px;
+  }
+
+  ._mx-#{$n} {
+    margin-right: #{$n * $factor}px;
+    margin-left: #{$n * $factor}px;
+  }
+
+  ._my-#{$n} {
+    margin-top: #{$n * $factor}px;
+    margin-bottom: #{$n * $factor}px;
+  }
+
+  ._mt-#{$n} {
+    margin-top: #{$n * $factor}px;
+  }
+
+  ._mb-#{$n} {
+    margin-bottom: #{$n * $factor}px;
+  }
+
+  ._ml-#{$n} {
+    margin-left: #{$n * $factor}px;
+  }
+
+  ._mr-#{$n} {
+    margin-right: #{$n * $factor}px;
+  }
+
+  ._p-#{$n} {
+    padding: #{$n * $factor}px;
+  }
+
+  ._px-#{$n} {
+    padding-right: #{$n * $factor}px;
+    padding-left: #{$n * $factor}px;
+  }
+
+  ._py-#{$n} {
+    padding-top: #{$n * $factor}px;
+    padding-bottom: #{$n * $factor}px;
+  }
+
+  ._pt-#{$n} {
+    padding-top: #{$n * $factor}px;
+  }
+
+  ._pb-#{$n} {
+    padding-bottom: #{$n * $factor}px;
+  }
+
+  ._pl-#{$n} {
+    padding-left: #{$n * $factor}px;
+  }
+
+  ._pr-#{$n} {
+    padding-right: #{$n * $factor}px;
+  }
+}
+
+@each $size, $d in $dimensions {
+  @include media($d) {
+    @each $n in $numbers {
+      ._m_#{$size}-#{$n} {
+        margin: #{$n * $factor}px;
+      }
+
+      ._mx_#{$size}_#{$size}-#{$n} {
+        margin-right: #{$n * $factor}px;
+        margin-left: #{$n * $factor}px;
+      }
+
+      ._my_#{$size}-#{$n} {
+        margin-top: #{$n * $factor}px;
+        margin-bottom: #{$n * $factor}px;
+      }
+
+      ._mt_#{$size}-#{$n} {
+        margin-top: #{$n * $factor}px;
+      }
+
+      ._mb_#{$size}-#{$n} {
+        margin-bottom: #{$n * $factor}px;
+      }
+
+      ._ml_#{$size}-#{$n} {
+        margin-left: #{$n * $factor}px;
+      }
+
+      ._mr_#{$size}-#{$n} {
+        margin-right: #{$n * $factor}px;
+      }
+
+      ._p_#{$size}-#{$n} {
+        padding: #{$n * $factor}px;
+      }
+
+      ._px_#{$size}-#{$n} {
+        padding-right: #{$n * $factor}px;
+        padding-left: #{$n * $factor}px;
+      }
+
+      ._py_#{$size}-#{$n} {
+        padding-top: #{$n * $factor}px;
+        padding-bottom: #{$n * $factor}px;
+      }
+
+      ._pt_#{$size}-#{$n} {
+        padding-top: #{$n * $factor}px;
+      }
+
+      ._pb_#{$size}-#{$n} {
+        padding-bottom: #{$n * $factor}px;
+      }
+
+      ._pl_#{$size}-#{$n} {
+        padding-left: #{$n * $factor}px;
+      }
+
+      ._pr_#{$size}-#{$n} {
+        padding-right: #{$n * $factor}px;
+      }
+    }
+  }
+}
+
+// ===================================
+// Display
+// ===================================
+
+$displays: none, block, inline-block, inline, flex, inline-flex;
+
+@each $display in $displays {
+  ._display-#{$display} {
+    display: #{$display};
+  }
+}
+
+._hidden {
+  display: none;
+}
+
+@each $size, $d in $dimensions {
+  @include media($d) {
+    @each $display in $displays {
+      ._hidden_#{$size} {
+        display: none;
+      }
+
+      ._display_#{$size}-#{$display} {
+        display: #{$display};
+      }
+    }
+  }
+}
+
+// ===================================
+// Border radius
+// ===================================
+
+$radiuses: 16, 24, 32;
+
+@each $radius in $radiuses {
+  ._rad-#{$radius} {
+    border-radius: #{$radius}px;
+  }
+}
+
+._rad-bottom-16 {
+  border-radius: 0 0 16px 16px;
+}
+
+._rad-half {
+  border-radius: 50%;
+}
+
+// ===================================
+// Colors
+// ===================================
+
+@include colors;
+@include bg-colors;
